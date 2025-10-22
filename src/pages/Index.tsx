@@ -3,6 +3,7 @@ import { Hero3D } from "@/components/Hero3D";
 import { CategoryNav } from "@/components/CategoryNav";
 import { ProductGrid } from "@/components/ProductGrid";
 import { FeaturesSection } from "@/components/FeaturesSection";
+import { AboutSection } from "@/components/AboutSection";
 
 const Index = () => {
   return (
@@ -12,10 +13,11 @@ const Index = () => {
       <CategoryNav />
       <ProductGrid />
       <FeaturesSection />
+      <AboutSection />
       
-      <footer className="border-t border-border py-12 px-6">
-        <div className="container mx-auto text-center text-muted-foreground">
-          <p>© 2025 ProdiStore. Intelligence Embedded. Solutions Engineered.</p>
+      <footer className="border-t border-border/50 py-12 px-6 bg-secondary/20">
+        <div className="container mx-auto text-center text-muted-foreground text-sm">
+          <p>© 2025 Prodisyn Innovations. Intelligence Embedded. Solutions Engineered.</p>
         </div>
       </footer>
     </div>

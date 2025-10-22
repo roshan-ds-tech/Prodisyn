@@ -47,21 +47,21 @@ export const Hero3D = () => {
       </Canvas>
       
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-center z-10 px-4">
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 animate-fade-in">
-            <span className="gradient-text">Intelligence</span>
+        <div className="text-center z-10 px-4 max-w-5xl mx-auto">
+          <h1 className="text-5xl md:text-7xl font-semibold mb-6 animate-fade-in tracking-tight">
+            Intelligence Embedded.
             <br />
-            <span className="text-foreground">Engineered</span>
+            Solutions Engineered.
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-            The best way to experience cutting-edge technology
+          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in font-normal" style={{ animationDelay: "0.2s" }}>
+            Your trusted partner in engineering, consulting and training
           </p>
           <div className="flex gap-4 justify-center animate-fade-in" style={{ animationDelay: "0.4s" }}>
-            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:scale-105 transition-transform glow-effect">
-              Explore Products
+            <button className="px-6 py-3 bg-primary text-primary-foreground rounded-full text-sm font-medium hover:opacity-90 transition-opacity">
+              Explore Solutions
             </button>
-            <button className="px-8 py-3 glass-card text-foreground rounded-full font-semibold hover:scale-105 transition-transform">
-              Learn More
+            <button className="px-6 py-3 text-primary rounded-full text-sm font-medium hover:bg-secondary transition-colors">
+              Learn More →
             </button>
           </div>
         </div>
