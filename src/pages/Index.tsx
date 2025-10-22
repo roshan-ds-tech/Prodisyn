@@ -13,6 +13,7 @@ const Index = () => {
       <CategoryNav />
       <ProductGrid />
       <FeaturesSection />
+      <div id="training" className="scroll-mt-14" />
       <AboutSection />
       
       <footer className="border-t border-border/50 py-12 px-6 bg-secondary/20">

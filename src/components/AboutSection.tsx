@@ -41,7 +41,10 @@ export const AboutSection = () => {
                 and software to build smart, reliable, and future-ready products.
               </p>
             </div>
-            <button className="text-primary text-sm font-medium hover:opacity-80 transition-opacity">
+            <button
+              onClick={() => alert('More information about Prodisyn Innovations coming soon!')}
+              className="text-primary text-sm font-medium hover:opacity-80 transition-opacity"
+            >
               Read More →
             </button>
           </motion.div>

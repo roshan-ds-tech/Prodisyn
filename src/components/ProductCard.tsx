@@ -10,9 +10,15 @@ interface ProductCardProps {
 }
 
 export const ProductCard = ({ title, subtitle, price, image, gradient = false }: ProductCardProps) => {
+  const handleClick = () => {
+    alert(`Learn more about ${title}`);
+  };
+
   return (
     <motion.div
       whileHover={{ y: -4 }}
+      whileTap={{ scale: 0.98 }}
+      onClick={handleClick}
       className={`relative overflow-hidden rounded-2xl p-8 h-[500px] group cursor-pointer ${
         gradient ? "bg-secondary/50" : "apple-card"
       }`}
