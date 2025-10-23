@@ -321,12 +321,12 @@ export const Hero3D = () => {
             className="text-center z-10 px-4 max-w-5xl mx-auto"
             style={{ opacity: headlineOpacity }}
           >
-            <h1 className="text-5xl md:text-7xl font-semibold mb-6 tracking-tight">
+            <h1 className="text-5xl md:text-7xl font-semibold mb-6 tracking-tight text-black text-stroke-white">
               Intelligence Embedded.
               <br />
               Solutions Engineered.
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-normal">
+            <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-normal text-grey text-stroke-para">
               From chaos to clarity. From challenge to innovation.
             </p>
           </motion.div>

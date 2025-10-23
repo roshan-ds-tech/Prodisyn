@@ -12,7 +12,7 @@ export const AboutSection = () => {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3]">
               <img
-                src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?w=800&h=600&fit=crop"
+                src="/about_us.jpeg"
                 alt="Engineering team"
                 className="w-full h-full object-cover"
               />

@@ -1,9 +1,10 @@
-import { Navigation } from "@/components/Navigation";
+import  Navigation  from "@/components/Navigation";
 import { Hero3D } from "@/components/Hero3D";
 import { CategoryNav } from "@/components/CategoryNav";
 import { ProductGrid } from "@/components/ProductGrid";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { AboutSection } from "@/components/AboutSection";
+
 
 const Index = () => {
   return (
