@@ -36,7 +36,7 @@ export const ProductCard = ({ title, subtitle, price, image, gradient = false }:
         </div>
       </div>
       
-      <div className="absolute bottom-0 right-0 w-2/3 h-2/3 opacity-80 group-hover:scale-105 transition-transform duration-500">
+      <div className="absolute bottom-0 right-0 w-2/3 h-2/3  group-hover:scale-105 transition-transform duration-500">
         <img
           src={image}
           alt={title}

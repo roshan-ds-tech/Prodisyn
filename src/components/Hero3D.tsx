@@ -321,11 +321,11 @@ export const Hero3D = () => {
             className="text-center z-10 px-4 max-w-5xl mx-auto"
             style={{ opacity: headlineOpacity }}
           >
-            <h1 className="text-5xl md:text-7xl font-semibold mb-6 tracking-tight text-black text-stroke-white">
+            <h1 className="text-5xl md:text-7xl font-semibold mb-6 tracking-tight bg-gradient-to-br from-orange-500 to-yellow-400 bg-clip-text text-transparent drop-shadow-[0_2.5px_0_white] drop-shadow-[0_-2.5px_0_white] drop-shadow-[2.5px_0_0_white] drop-shadow-[-2.5px_0_0_white]">
               Intelligence Embedded.
               <br />
               Solutions Engineered.
-            </h1>
+          </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-normal text-grey text-stroke-para">
               From chaos to clarity. From challenge to innovation.
             </p>

@@ -1,10 +1,11 @@
-import  Navigation  from "@/components/Navigation";
+import  {Navigation}  from "@/components/Navigation";
 import { Hero3D } from "@/components/Hero3D";
 import { CategoryNav } from "@/components/CategoryNav";
 import { ProductGrid } from "@/components/ProductGrid";
 import { FeaturesSection } from "@/components/FeaturesSection";
 import { AboutSection } from "@/components/AboutSection";
-
+import { Footer } from "@/components/Footer";
+import { VideoCardSlides } from "@/components/VideoCardSlides";
 
 const Index = () => {
   return (
@@ -15,8 +16,9 @@ const Index = () => {
       <ProductGrid />
       <FeaturesSection />
       <div id="training" className="scroll-mt-14" />
+      <VideoCardSlides />
       <AboutSection />
-      
+
       <footer className="border-t border-border/50 py-12 px-6 bg-secondary/20">
         <div className="container mx-auto text-center text-muted-foreground text-sm">
           <p>© 2025 Prodisyn Innovations. Intelligence Embedded. Solutions Engineered.</p>
