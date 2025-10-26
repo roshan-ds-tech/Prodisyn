@@ -5,7 +5,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, Search, ShoppingBag, X, ChevronDown } from "lucide-react";
+import { Menu, Search, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -124,24 +124,29 @@ export const Navigation = () => {
                       Product Engineering
                     </Link>
                   </DropdownMenuItem>
-                  {/* Add other service links here */}
-                  <DropdownMenuItem
-                   onClick={() => alert('Technical Consulting page coming soon!')} // Placeholder action
-                   className="cursor-pointer"
-                  >
-                    Technical Consulting
+                  <DropdownMenuItem asChild>
+                    <Link
+                      to="/services/technical-consulting"
+                      className="cursor-pointer"
+                    >
+                      Technical Consulting
+                    </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                   onClick={() => alert('Process Consulting page coming soon!')} // Placeholder action
-                   className="cursor-pointer"
-                  >
-                    Process Consulting
+                  <DropdownMenuItem asChild>
+                    <Link
+                      to="/services/process-consulting"
+                      className="cursor-pointer"
+                    >
+                      Process Consulting
+                    </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem
-                   onClick={() => alert('Embedded Training page coming soon!')} // Placeholder action
-                   className="cursor-pointer"
-                  >
-                    Embedded Training
+                  <DropdownMenuItem asChild>
+                    <Link
+                      to="/services/embedded-training"
+                      className="cursor-pointer"
+                    >
+                      Embedded Training
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -174,14 +179,15 @@ export const Navigation = () => {
             >
               <Search className="h-4 w-4" />
             </Button>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-foreground/70 hover:text-foreground h-9 w-9"
-              onClick={() => alert("Shopping cart functionality coming soon!")}
-            >
-              <ShoppingBag className="h-4 w-4" />
-            </Button>
+            <Link to="/apply-now">
+              <Button
+                variant="default"
+                size="sm"
+                className="bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-white hidden md:flex"
+              >
+                Apply Now
+              </Button>
+            </Link>
             <Button
               variant="ghost"
               size="icon"
@@ -229,19 +235,34 @@ export const Navigation = () => {
 
             {/* Mobile Service Links */}
              <span className="text-foreground/70 text-left font-medium">Services</span>
-            <Link
+                         <Link
               to="/services/product-engineering"
               onClick={() => setIsMenuOpen(false)}
               className="text-foreground/70 hover:text-foreground transition-colors text-left pl-4"
             >
               Product Engineering
             </Link>
-             <button
-               onClick={() => {alert('Consulting page coming soon!'); setIsMenuOpen(false);}}
-               className="text-foreground/70 hover:text-foreground transition-colors text-left pl-4"
-             >
-                Consulting
-             </button>
+             <Link
+              to="/services/technical-consulting"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-foreground/70 hover:text-foreground transition-colors text-left pl-4"
+            >
+              Technical Consulting
+            </Link>
+             <Link
+              to="/services/process-consulting"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-foreground/70 hover:text-foreground transition-colors text-left pl-4"
+            >
+              Process Consulting
+            </Link>
+             <Link
+              to="/services/embedded-training"
+              onClick={() => setIsMenuOpen(false)}
+              className="text-foreground/70 hover:text-foreground transition-colors text-left pl-4"
+            >
+              Embedded Training
+            </Link>
              {/* Add other mobile service links */}
 
             {/* Mobile Training & About */}
@@ -257,6 +278,15 @@ export const Navigation = () => {
             >
               About
             </button>
+
+            {/* Mobile Apply Now Button */}
+            <Link
+              to="/apply-now"
+              onClick={() => setIsMenuOpen(false)}
+              className="mt-2 inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-orange-500 to-yellow-400 hover:from-orange-600 hover:to-yellow-500 text-white rounded-md font-medium"
+            >
+              Apply Now
+            </Link>
           </div>
         )}
       </div>
