@@ -14,8 +14,8 @@ const Index = () => {
       <Hero3D />
       <CategoryNav />
       <ProductGrid />
-      <FeaturesSection />
       <div id="training" className="scroll-mt-14" />
+      <FeaturesSection />
       <VideoCardSlides />
       <AboutSection />
 

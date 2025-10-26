@@ -1,8 +1,43 @@
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Sphere, Torus, Box, Cylinder, Cone, Octahedron, Dodecahedron, MeshTransmissionMaterial, Line, RoundedBox } from "@react-three/drei";
+import { Sphere, Torus, Box, Cylinder, Cone, Octahedron, Dodecahedron, MeshTransmissionMaterial, Line, RoundedBox, useTexture } from "@react-three/drei";
 import { Suspense, useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import * as THREE from "three";
+
+const TexturedSphere = ({ scrollProgress }: { scrollProgress: number }) => {
+  const sphereRef = useRef<THREE.Mesh>(null);
+  const [colorMap, aoMap, metalnessMap, roughnessMap, normalMap] = useTexture([
+    '/3d_element/WallPanel01_4K/WallPanel01 _Color02_4K.png',
+    '/3d_element/WallPanel01_4K/WallPanel01 _AO_4K.png',
+    '/3d_element/WallPanel01_4K/WallPanel01 _Metallic_4K.png',
+    '/3d_element/WallPanel01_4K/WallPanel01 _Roughness_4K.png',
+    '/3d_element/WallPanel01_4K/WallPanel01 _NM_4K.png',
+  ]);
+
+  useFrame((state) => {
+    if (sphereRef.current) {
+      sphereRef.current.rotation.y += 0.002;
+      sphereRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
+    }
+  });
+
+  const pulseScale = 1 + Math.sin(scrollProgress * Math.PI * 4) * 0.04;
+
+  return (
+    <Sphere ref={sphereRef} args={[1.2, 128, 128]} scale={pulseScale}>
+      <meshStandardMaterial
+        map={colorMap}
+        aoMap={aoMap}
+        metalnessMap={metalnessMap}
+        roughnessMap={roughnessMap}
+        normalMap={normalMap}
+        metalness={0.95}
+        roughness={0.3}
+        envMapIntensity={1.5}
+      />
+    </Sphere>
+  );
+};
 
 const ProdisynCore = ({ scrollProgress }: { scrollProgress: number }) => {
   const coreRef = useRef<THREE.Group>(null);
@@ -12,7 +47,6 @@ const ProdisynCore = ({ scrollProgress }: { scrollProgress: number }) => {
   useFrame((state) => {
     if (coreRef.current) {
       coreRef.current.rotation.y += 0.002;
-      coreRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
     }
     if (ringRef.current && scrollProgress > 0.15) {
       ringRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.5) * 0.2;
@@ -24,30 +58,11 @@ const ProdisynCore = ({ scrollProgress }: { scrollProgress: number }) => {
     }
   });
 
-  const pulseScale = 1 + Math.sin(scrollProgress * Math.PI * 4) * 0.04;
-
   return (
     <group ref={coreRef}>
-      <Sphere args={[1.2, 64, 64]} scale={pulseScale}>
-        <MeshTransmissionMaterial
-          transmission={0.98}
-          thickness={0.3}
-          roughness={0.02}
-          chromaticAberration={0.03}
-          anisotropy={1}
-          color="#ffffff"
-          ior={1.5}
-        />
-      </Sphere>
-
-      <Sphere args={[0.9, 48, 48]} scale={pulseScale}>
-        <meshStandardMaterial
-          color="#e5e7eb"
-          metalness={0.95}
-          roughness={0.05}
-          envMapIntensity={1.5}
-        />
-      </Sphere>
+      <Suspense fallback={null}>
+        <TexturedSphere scrollProgress={scrollProgress} />
+      </Suspense>
 
       {scrollProgress > 0.15 && (
         <>
@@ -305,7 +320,7 @@ export const Hero3D = () => {
   const headlineOpacity = scrollProgress > 0.8 ? (scrollProgress - 0.8) * 5 : 0;
 
   return (
-    <div ref={containerRef} className="relative h-[300vh] w-full">
+    <div ref={containerRef} className="relative h-[120vh] w-full">
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-background">
         <Canvas
           camera={{ position: [0, 0, 10], fov: 50 }}
