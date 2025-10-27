@@ -9,7 +9,7 @@ import { Menu, Search, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const Navigation = () => {
+export const Navigation = () => { 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
 
