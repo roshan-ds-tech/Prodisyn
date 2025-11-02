@@ -23,6 +23,20 @@ npm run dev
 cd prodisyn-backend
 
 # Step 2:
+python3 -m venv venv
+
+# Step 3:
+source venv/bin/activate     # on macOS / Linux
+venv\Scripts\activate        # on Windows
+
+# Step 4:
+cd prodisyn_backend
+
+# Step 5:
+pip install -r requirements.txt
+
+# Step 6:
+python manage.py runserver
 ```
 
 
